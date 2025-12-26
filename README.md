@@ -1,4 +1,4 @@
-# AutoRenderer
+# Sharkview
 
 A modern, cross-platform automated rendering tool built with **C#** and **Avalonia UI**, designed to orchestrate **Blender** for rendering scenes and generating videos programmatically.
 
