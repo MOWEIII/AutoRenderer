@@ -1,3 +1,4 @@
+#pragma warning disable IL2026 // Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
@@ -84,6 +85,7 @@ public partial class App : Application
 
     private void DisableAvaloniaDataAnnotationValidation()
     {
+
         // Get an array of plugins to remove
         var dataValidationPluginsToRemove =
             BindingPlugins.DataValidators.OfType<DataAnnotationsValidationPlugin>().ToArray();
@@ -93,5 +95,7 @@ public partial class App : Application
         {
             BindingPlugins.DataValidators.Remove(plugin);
         }
+
     }
 }
+#pragma warning restore IL2026

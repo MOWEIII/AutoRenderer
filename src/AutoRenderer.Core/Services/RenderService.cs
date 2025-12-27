@@ -454,10 +454,10 @@ public class RenderService : IRenderService, IDisposable
             sb.AppendLine($"bpy.ops.object.empty_add(location=(0, 0, 0))");
             sb.AppendLine($"target = bpy.context.object");
             sb.AppendLine($"bpy.context.view_layer.objects.active = cam");
-            sb.AppendLine($"bpy.ops.object.constraint_add(type='TRACK_TO')");
-            sb.AppendLine($"cam.constraints['Track To'].target = target");
-            sb.AppendLine($"cam.constraints['Track To'].track_axis = 'TRACK_NEGATIVE_Z'");
-            sb.AppendLine($"cam.constraints['Track To'].up_axis = 'UP_Y'");
+            sb.AppendLine($"track_const = cam.constraints.new(type='TRACK_TO')");
+            sb.AppendLine($"track_const.target = target");
+            sb.AppendLine($"track_const.track_axis = 'TRACK_NEGATIVE_Z'");
+            sb.AppendLine($"track_const.up_axis = 'UP_Y'");
         }
         else
         {
@@ -490,10 +490,10 @@ public class RenderService : IRenderService, IDisposable
             sb.AppendLine("    bpy.ops.object.empty_add(location=(center_x, center_y, center_z))");
             sb.AppendLine("    target = bpy.context.object");
             sb.AppendLine("    bpy.context.view_layer.objects.active = cam");
-            sb.AppendLine("    bpy.ops.object.constraint_add(type='TRACK_TO')");
-            sb.AppendLine("    cam.constraints['Track To'].target = target");
-            sb.AppendLine("    cam.constraints['Track To'].track_axis = 'TRACK_NEGATIVE_Z'");
-            sb.AppendLine("    cam.constraints['Track To'].up_axis = 'UP_Y'");
+            sb.AppendLine("    track_const = cam.constraints.new(type='TRACK_TO')");
+            sb.AppendLine("    track_const.target = target");
+            sb.AppendLine("    track_const.track_axis = 'TRACK_NEGATIVE_Z'");
+            sb.AppendLine("    track_const.up_axis = 'UP_Y'");
         }
 
         // Render Settings
